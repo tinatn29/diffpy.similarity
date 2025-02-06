@@ -12,7 +12,8 @@
 # See LICENSE.rst for license information.
 #
 ##############################################################################
-"""Python package for computing various structural similarity metrics and other tasks related to structure similarity"""
+"""Python package for computing various structural similarity metrics and other
+tasks related to structure similarity."""
 
 # package version
 from diffpy.similarity.version import __version__

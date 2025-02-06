@@ -12,7 +12,6 @@
 # See LICENSE.rst for license information.
 #
 ##############################################################################
-
 """Blank namespace package for module diffpy."""
 
 
@@ -21,4 +20,3 @@ from pkgutil import extend_path
 __path__ = extend_path(__path__, __name__)
 
 # End of file
-
