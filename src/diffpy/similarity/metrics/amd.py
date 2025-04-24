@@ -19,9 +19,10 @@ def amd_compare(cif1, cif2, k=100):
     Returns
     -------
     dm : float or pandas.DataFrame
-        If cif1 and cif2 are both strings, return the AMD distance value (float).
-        If either cif1 or cif2 is a list, return a distance matrix of shape (len(cif1), len(cif2)).
-        Each element represents the AMD distance between two structures from CIF files.
+        For single files cif1 and cif2, return the AMD distance value (float).
+        If either cif1 or cif2 is a list, return a distance matrix 
+        of shape (len(cif1), len(cif2)).
+        Each element represents the AMD distance between two structures.
     """
     dm = amd.compare(cif1, cif2, by="AMD", k=k)
     if isinstance(cif1, list) or isinstance(cif2, list):
@@ -52,7 +53,7 @@ def pdd_compare(cif1, cif2, k=100):
     -------
     dm : numpy.ndarray
         Distance matrix of shape (len(cif1), len(cif2)).
-        Each element represents the PDD distance between two structures from CIF files.
+        Each element represents the PDD distance between two structures.
     """
     dm = amd.compare(cif1, cif2, by="PDD", k=k)
     if isinstance(cif1, list) or isinstance(cif2, list):
