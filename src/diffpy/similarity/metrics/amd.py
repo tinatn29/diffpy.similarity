@@ -2,10 +2,9 @@ import amd
 
 
 def amd_compare(cif1, cif2, k=100):
-    """
-    Compare two CIF files or two lists fo CIF files using the AMD metric.
-    Use cif1 = cif2 = cif_list = [cif_0, cif_1, ...]
-    to compare all CIF files in cif_list.
+    """Compare two CIF files or two lists fo CIF files using the AMD metric.
+    Use cif1 = cif2 = cif_list = [cif_0, cif_1, ...] to compare all CIF files
+    in cif_list.
 
     Parameters
     ----------
@@ -16,7 +15,7 @@ def amd_compare(cif1, cif2, k=100):
     k : int
         Number of nearest neighbors to consider.
         Default is 100.
-    
+
     Returns
     -------
     dm : float or pandas.DataFrame
@@ -24,19 +23,20 @@ def amd_compare(cif1, cif2, k=100):
         If either cif1 or cif2 is a list, return a distance matrix of shape (len(cif1), len(cif2)).
         Each element represents the AMD distance between two structures from CIF files.
     """
-    dm = amd.compare(cif1, cif2, by='AMD', k=k)
+    dm = amd.compare(cif1, cif2, by="AMD", k=k)
     if isinstance(cif1, list) or isinstance(cif2, list):
         # if at least one input is a list, return the distance matrix
         return dm
     else:
-        return float(dm.iloc[0, 0])  # return the single distance value as a float
+        return float(
+            dm.iloc[0, 0]
+        )  # return the single distance value as a float
 
 
 def pdd_compare(cif1, cif2, k=100):
-    """
-    Compare two CIF files or two lists fo CIF files using the PDD metric.
-    Use cif1 = cif2 = cif_list = [cif_0, cif_1, ...]
-    to compare all CIF files in cif_list.
+    """Compare two CIF files or two lists fo CIF files using the PDD metric.
+    Use cif1 = cif2 = cif_list = [cif_0, cif_1, ...] to compare all CIF files
+    in cif_list.
 
     Parameters
     ----------
@@ -47,16 +47,18 @@ def pdd_compare(cif1, cif2, k=100):
     k : int
         Number of nearest neighbors to consider.
         Default is 100.
-    
+
     Returns
     -------
     dm : numpy.ndarray
         Distance matrix of shape (len(cif1), len(cif2)).
         Each element represents the PDD distance between two structures from CIF files.
     """
-    dm = amd.compare(cif1, cif2, by='PDD', k=k)
+    dm = amd.compare(cif1, cif2, by="PDD", k=k)
     if isinstance(cif1, list) or isinstance(cif2, list):
         # if at least one input is a list, return the distance matrix
         return dm
     else:
-        return float(dm.iloc[0, 0])  # return the single distance value as a float
+        return float(
+            dm.iloc[0, 0]
+        )  # return the single distance value as a float
