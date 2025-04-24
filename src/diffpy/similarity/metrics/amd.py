@@ -2,7 +2,7 @@ import amd
 
 
 def amd_compare(cif1, cif2, k=100):
-    """Compare two CIF files or two lists fo CIF files using the AMD metric.
+    """Compare two CIF files or two lists of CIF files using the AMD metric.
     Use cif1 = cif2 = cif_list = [cif_0, cif_1, ...] to compare all CIF files
     in cif_list.
 
@@ -20,7 +20,7 @@ def amd_compare(cif1, cif2, k=100):
     -------
     dm : float or pandas.DataFrame
         For single files cif1 and cif2, return the AMD distance value (float).
-        If either cif1 or cif2 is a list, return a distance matrix 
+        If either cif1 or cif2 is a list, return a distance matrix
         of shape (len(cif1), len(cif2)).
         Each element represents the AMD distance between two structures.
     """
@@ -35,7 +35,7 @@ def amd_compare(cif1, cif2, k=100):
 
 
 def pdd_compare(cif1, cif2, k=100):
-    """Compare two CIF files or two lists fo CIF files using the PDD metric.
+    """Compare two CIF files or two lists of CIF files using the PDD metric.
     Use cif1 = cif2 = cif_list = [cif_0, cif_1, ...] to compare all CIF files
     in cif_list.
 
