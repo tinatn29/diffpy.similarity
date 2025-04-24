@@ -1,6 +1,6 @@
 **Added:**
 
-* Functions to compute amd and pdd in src/diffpy/metrics/amd.py 
+* Functions to compute amd and pdd in src/diffpy/metrics/amd.py
 * Tests for amd and pdd functions in tests/test_amd.py
 * Test data (two cif files and pkl files (DataFrames)) in tests/test_data
 
